@@ -1,13 +1,12 @@
-function filterRangeInPlace(arr, begin, end) {
+function filterRangeInPlace(arr, min, max) {
     for (var i = 0; i < arr.length; i++) {
-        if (arr[i] < begin || arr[i] > end) {
-            arr.splice(i--, 1);
+        if (arr[i] < min || arr[i] > max) {
+            arr.splice(i--, 1)
         }
     }
+    return arr;
 }
 
-var array = [5, 3, 8, 1];
+var arr = [5, 3, 8, 1];
 
-filterRangeInPlace(array, 1, 4);
-
-console.log(array);
+console.log(filterRangeInPlace(arr,1 ,4));
