@@ -1,0 +1,20 @@
+"use strict";
+
+var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+
+function aclean(arr) {
+    var obj = {};
+    for (var i = 0; i < arr.length; i++) {
+        var sorted = arr[i].toLowerCase().split("").sort().join("");
+        obj[sorted] = arr[i];
+    }
+
+    var result = [];
+
+    for (var key in obj) {
+        result.push(obj[key]);
+    }
+    return result;
+}
+
+console.log(aclean(arr)); // "воз,киборг,корсет" или "ЗОВ,гробик,сектор"
